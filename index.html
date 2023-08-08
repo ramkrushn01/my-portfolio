@@ -1025,11 +1025,12 @@
             });
 
             document.onscroll = ()=>{
+                let gear_speed = 2
                 gear_1 = document.getElementById('gear-1')
                 gear_2 = document.getElementById('gear-2')
 
-                gear_1.style.rotate = pageYOffset/2 + 'deg';
-                gear_2.style.rotate = "-" + pageYOffset/2 + 'deg';
+                gear_1.style.rotate = pageYOffset/gear_speed + 'deg';
+                gear_2.style.rotate = "-" + pageYOffset/gear_speed + 'deg';
             }
         </script>
     </body>
