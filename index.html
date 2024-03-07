@@ -14,6 +14,7 @@
 
         --dark-navy: #020c1b;
         --navy: #0a192f;
+        --main-color: #64ffda;
         --light-navy: #112240;
         --lightest-navy: #233554;
         --navy-shadow: rgba(2, 12, 27, 0.7);
@@ -508,6 +509,13 @@
         margin-inline: 10px;
     }
 
+    .where-worked {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
     .work-upper {
         display: flex;
         gap: 22px;
@@ -537,6 +545,22 @@
         border-left: 2px solid var(--green);
         color: var(--green);
         font-weight: 500;
+    }
+
+    .work-upper .main-content-section .main-content {
+        list-style: none;
+    }
+
+    .work-upper .main-content-section .main-content li {
+        padding-block: 5px;
+    }
+
+    .work-upper .main-content-section .main-content li::before {
+        content: "▹";
+        color: var(--green);
+        font-size: var(--fz-sm);
+        line-height: 12px;
+        padding-right: 15px;
     }
 
     /* .mb-0:nth-child(1){
@@ -718,18 +742,18 @@
             width: 32px;
         }
 
-        .work-upper{
+        .work-upper {
             flex-direction: column;
         }
 
-        .work-upper .side-section{
+        .work-upper .side-section {
             flex-direction: row;
             overflow-x: scroll;
             position: relative;
             z-index: 1;
         }
 
-        .work-upper .side-section .section-1{
+        .work-upper .side-section .section-1 {
             border-left: 0px solid;
             border-bottom: 2px solid var(--slate);
         }
@@ -941,11 +965,14 @@
                         <li class="section-1" id="work-section-5">Socket.IO / WebRTC</li>
                     </ul>
                     <div class="main-content-section">
-                        <div class="main-content">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam ratione excepturi ab
-                            placeat quidem omnis, et recusandae. At a, sunt inventore rerum, nostrum, itaque eligendi
-                            excepturi explicabo magnam architecto mollitia.
-                        </div>
+                        <ul class="main-content">
+                            <li>lorem-11</li>
+                            <li>lorem-12</li>
+                            <li>lorem-71</li>
+                            <li>lorem-30</li>
+                            <li>lorem-19</li>
+                            <li>lorem-12</li>
+                        </ul>
                     </div>
                 </div>
 
@@ -1015,7 +1042,42 @@
         var hamp_2 = document.getElementById("hamp-first-2");
         var hamp_3 = document.getElementById("hamp-first-3");
         var hampburger = document.getElementById("hampburger");
-        var where_work_sections = {"work-section-1":"lorem-1","work-section-2":"lorem-2","work-section-3":"lorem-3","work-section-4":"lorem-4","work-section-5":"lorem-5"}
+        var where_work_sections = {
+            "work-section-1": [
+                "lorem-11",
+                "lorem-12",
+                "lorem-71",
+                "lorem-30",
+                "lorem-19",
+                "lorem-12"
+            ],
+            "work-section-2": [
+                "lorem-2",
+                "lorem-28",
+                "lorem-19",
+                "lorem-98"
+            ],
+            "work-section-3": [
+                "lorem-3",
+                "lorem-3",
+                "lorem-58",
+                "lorem-34",
+                "lorem-66"
+            ],
+            "work-section-4": [
+                "lorem-4",
+                "lorem-98",
+                "lorem-22",
+                "lorem-4",
+                "lorem-42"
+            ],
+            "work-section-5": [
+                "lorem-5",
+                "lorem-50",
+                "lorem-4",
+                "lorem-92"
+            ]
+        }
 
         function navHampAnimation(action) {
             if (action) {
@@ -1044,16 +1106,23 @@
             }
         }
 
-        document.getElementById('workSectionClick').addEventListener("click",(e)=>{
+        document.getElementById('workSectionClick').addEventListener("click", (e) => {
             let section_1 = document.getElementsByClassName('section-1');
             let main_content = document.querySelector('.main-content-section .main-content')
+            const active_where_work = where_work_sections[e.target.id];
+
             for (let i = 0; i < section_1.length; i++) {
                 let element = section_1[i];
                 element.classList.remove('active');
             }
             e.target.classList.add('active');
-            main_content.innerHTML = where_work_sections[e.target.id]
-            
+            let final_work_str = ""
+            for (let i = 0; i < active_where_work.length; i++) {
+                const element = active_where_work[i];
+                final_work_str += `<li>${element}</li>`;
+            }
+            main_content.innerHTML = final_work_str;
+
             // console.log(e.target.classList.add('active'))
         })
 
