@@ -75,6 +75,25 @@
         align-items: center;
     }
 
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+
     .head-img {
         width: 50px;
         color: var(--main-color);
@@ -549,6 +568,11 @@
 
     .work-upper .main-content-section .main-content {
         list-style: none;
+        position: relative;
+        z-index: 1;
+        max-width: 550px;
+        max-height: 80vh;
+        overflow: auto;
     }
 
     .work-upper .main-content-section .main-content li {
@@ -758,7 +782,7 @@
             border-bottom: 2px solid var(--slate);
         }
 
-        .where-worked{
+        .where-worked {
             overflow-x: clip;
         }
 
@@ -970,12 +994,24 @@
                     </ul>
                     <div class="main-content-section">
                         <ul class="main-content">
-                            <li>lorem-11</li>
-                            <li>lorem-12</li>
-                            <li>lorem-71</li>
-                            <li>lorem-30</li>
-                            <li>lorem-19</li>
-                            <li>lorem-12</li>
+                            <li>The project aimed to create a robust content management system using Django CMS, a
+                                powerful content management platform built on Django. The CMS allows for easy creation,
+                                management, and publishing of web content, making it an ideal solution for businesses
+                                and organizations needing dynamic websites.</li>
+                            <li>Django CMS: The core of the project, Django CMS provided the foundation for building and
+                                managing the website's content. Its intuitive drag-and-drop interface and customizable
+                                plugins facilitated the creation of dynamic pages.</li>
+                            <li>Django Machina: For implementing the support forum, Django Machina Framework was
+                                utilized. Django Machina is a forum engine built on Django, providing essential features
+                                for setting up discussion forums within web applications.</li>
+                            <li>Forum Integration: You integrated the Django Machina Framework to implement a support
+                                forum within the CMS. This involved setting up forum categories, threads, and posts, as
+                                well as integrating forum functionality seamlessly with the rest of the website.</li>
+                            <li>The result of your work was a feature-rich content management website equipped with a
+                                user-friendly interface for managing content and a seamlessly integrated support forum
+                                for fostering community engagement and interaction. The website provided an intuitive
+                                platform for administrators to create, edit, and publish content, while also offering
+                                users a forum to ask questions, share knowledge, and collaborate.</li>
                         </ul>
                     </div>
                 </div>
@@ -1048,25 +1084,26 @@
         var hampburger = document.getElementById("hampburger");
         var where_work_sections = {
             "work-section-1": [
-                "lorem-11",
-                "lorem-12",
-                "lorem-71",
-                "lorem-30",
-                "lorem-19",
-                "lorem-12"
-            ],
+                "The project aimed to create a robust content management system using Django CMS, a powerful content management platform built on Django. The CMS allows for easy creation, management, and publishing of web content, making it an ideal solution for businesses and organizations needing dynamic websites.",
+                "Django CMS: The core of the project, Django CMS provided the foundation for building and managing the website's content. Its intuitive drag-and-drop interface and customizable plugins facilitated the creation of dynamic pages.",
+                "Django Machina: For implementing the support forum, Django Machina Framework was utilized. Django Machina is a forum engine built on Django, providing essential features for setting up discussion forums within web applications.",
+                "Forum Integration: You integrated the Django Machina Framework to implement a support forum within the CMS. This involved setting up forum categories, threads, and posts, as well as integrating forum functionality seamlessly with the rest of the website.",
+                "The result of your work was a feature-rich content management website equipped with a user-friendly interface for managing content and a seamlessly integrated support forum for fostering community engagement and interaction. The website provided an intuitive platform for administrators to create, edit, and publish content, while also offering users a forum to ask questions, share knowledge, and collaborate.",
+            ], // Django / DjangoCMS.
             "work-section-2": [
-                "lorem-2",
-                "lorem-28",
-                "lorem-19",
-                "lorem-98"
-            ],
+                "Django REST Framework: The backend of the application was built using Django REST Framework, which provided a powerful toolkit for building Web APIs in Django.",
+                "Utilized Django REST Framework to develop robust APIs, implementing authentication, serialization, pagination, and error handling.", 
+                "Leveraged its viewsets and validation for seamless CRUD operations, ensuring data integrity and efficient communication between frontend and backend.", 
+                "Employed DRF's testing and documentation features to maintain reliability and usability, enhancing the application's performance and security.",
+                "Overall, contributed to creating a secure and scalable backend infrastructure, pivotal in achieving the project's objectives.",
+                "Led the Django REST Framework integration, ensuring robust API development and adherence to best practices.", 
+            ], // Django REST Framework.
             "work-section-3": [
-                "lorem-3",
-                "lorem-3",
-                "lorem-58",
-                "lorem-34",
-                "lorem-66"
+                "React JS: React JS served as the cornerstone of the project's frontend development, offering a paradigm shift in building dynamic and responsive user interfaces.", 
+                "Its component-based architecture facilitated the creation of reusable UI elements, ensuring maintainability and scalability throughout the application.",
+                "Seamless Integration of React Ecosystem: Your expertise in React JS, coupled with the integration of Redux Saga and Redux Toolkit, played a pivotal role in orchestrating a seamless and intuitive user experience.",
+                "Enhanced State Management: The integration of Redux Saga and Redux Toolkit allowed for enhanced state management, enabling the application to handle asynchronous data flows with ease.", 
+                "By orchestrating complex asynchronous operations in a declarative and efficient manner, you significantly improved the application's responsiveness and robustness.",
             ],
             "work-section-4": [
                 "lorem-4",
